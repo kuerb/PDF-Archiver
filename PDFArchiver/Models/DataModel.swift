@@ -89,7 +89,7 @@ class DataModel: Logging {
 
     func filterTags(prefix: String) -> Set<Tag> {
         let tags = self.tags.filter { tag in
-            return tag.name.hasPrefix(prefix)
+            return tag.name.lowercased().hasPrefix(prefix.lowercased())
         }
         return tags
     }

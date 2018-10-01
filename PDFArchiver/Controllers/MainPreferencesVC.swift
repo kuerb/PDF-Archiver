@@ -52,6 +52,11 @@ class MainPreferencesVC: PreferencesVC {
     @IBAction func tagsCheckButtonClicked(_ sender: NSButton) {
         self.preferencesDelegate?.analyseAllFolders = sender.state == .on
     }
+    
+    @IBAction func tagsLowercaseButtonClicked(_ sender: NSButton) {
+        self.preferencesDelegate?.lowercaseTags = sender.state == .on
+    }
+    
     @IBAction func convertPicturesButtonClicked(_ sender: NSButton) {
         self.preferencesDelegate?.convertPictures = sender.state == .on
     }

@@ -15,6 +15,7 @@ protocol PreferencesDelegate: class {
     var archiveModificationDate: Date? { get set }
 
     var slugifyNames: Bool { get set }
+    var lowercaseTags: Bool { get set }
     var useiCloudDrive: Bool { get set }
     var iCloudDrivePath: URL? {get}
     var analyseAllFolders: Bool { get set }
@@ -33,6 +34,7 @@ class Preferences: PreferencesDelegate, Logging {
     weak var archiveDelegate: ArchiveDelegate?
     var archiveModificationDate: Date?
     var slugifyNames: Bool = true
+    var lowercaseTags: Bool = true
     var useiCloudDrive: Bool = false {
         didSet {
 
@@ -143,6 +145,9 @@ class Preferences: PreferencesDelegate, Logging {
 
         // save the slugifyNames flag
         UserDefaults.standard.set(!(self.slugifyNames), forKey: "noSlugify")
+        
+        // save the lowercaseTags flag
+        UserDefaults.standard.set(self.lowercaseTags, forKey: "lowercaseTags")
 
         // save the analyseOnlyLatestFolders flag
         UserDefaults.standard.set(self.analyseAllFolders, forKey: "analyseOnlyLatestFolders")
@@ -176,6 +181,9 @@ class Preferences: PreferencesDelegate, Logging {
 
         // load the noSlugify flag
         self.slugifyNames = !(UserDefaults.standard.bool(forKey: "noSlugify"))
+        
+        // load the lowercaseTags flag
+        self.convertPictures = UserDefaults.standard.bool(forKey: "lowercaseTags")
 
         // load the analyseOnlyLatestFolders flag
         self.analyseAllFolders = UserDefaults.standard.bool(forKey: "analyseOnlyLatestFolders")
