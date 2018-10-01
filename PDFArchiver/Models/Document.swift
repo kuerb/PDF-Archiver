@@ -170,7 +170,7 @@ class Document: NSObject, Logging {
         tagStr = String(tagStr.dropLast(1))
 
         // create new filepath
-        let filename = "\(dateStr)--\(specification)__\(tagStr).pdf"
+        let filename = "\(dateStr) \(specification).pdf"
         let foldername = String(dateStr.prefix(4))
         return (foldername, filename)
     }
