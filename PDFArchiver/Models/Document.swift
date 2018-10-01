@@ -57,11 +57,19 @@ class Document: NSObject, Logging {
             self.specification = raw[0]
         }
 
-        // parse the tags
-        if var raw = self.name.capturedGroups(withRegex: "__([\\w\\d_]+).[pdfPDF]{3}$") {
-            // parse the tags of a document
-            let documentTagNames = raw[0].components(separatedBy: "_")
-
+        // parse the tags from finder (not file name)
+        var resource : AnyObject?
+        do {
+            try (self.path as NSURL).getResourceValue(&resource, forKey: URLResourceKey.tagNamesKey)
+            var fileTags : [String]
+            if resource == nil {
+                fileTags = [String]()
+            } else {
+                fileTags = resource as! [String]
+            }
+            
+            let documentTagNames = fileTags
+            
             // get the available tags of the archive
             for documentTagName in documentTagNames {
                 if let availableTag = availableTags.filter({$0.name == documentTagName}).first {
@@ -73,7 +81,10 @@ class Document: NSObject, Logging {
                     self.documentTags.insert(newTag)
                 }
             }
+        } catch let error as NSError {
+            os_log("Error while parsing tags: %@", type: .error, error.description)
         }
+        
     }
 
     @discardableResult
