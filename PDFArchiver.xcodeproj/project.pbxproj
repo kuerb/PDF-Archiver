@@ -30,7 +30,6 @@
 		A359E4B7202C376E00A703AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A359E4B9202C376E00A703AF /* InfoPlist.strings */; };
 		A36B47C02077DA4D00F3DCAF /* DonationPreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36B47BF2077DA4D00F3DCAF /* DonationPreferencesVC.swift */; };
 		A3735B6A20F32B6C0056DA3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3735B6920F32B6C0056DA3D /* Constants.swift */; };
-		A3797B61207B3684009DEF70 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3797B60207B3684009DEF70 /* StoreKit.framework */; };
 		A38787762159797600F05EF7 /* HelperBackgroundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38787752159797600F05EF7 /* HelperBackgroundViews.swift */; };
 		A38A58AB1FFFA72D003F0573 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A58AA1FFFA72D003F0573 /* WindowController.swift */; };
 		A38F4911206952AD00B8164A /* PreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F4910206952AD00B8164A /* PreferencesTests.swift */; };
@@ -101,7 +100,6 @@
 		A359E4BA202C377800A703AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A36B47BF2077DA4D00F3DCAF /* DonationPreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationPreferencesVC.swift; sourceTree = "<group>"; };
 		A3735B6920F32B6C0056DA3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A3797B60207B3684009DEF70 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A38787752159797600F05EF7 /* HelperBackgroundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBackgroundViews.swift; sourceTree = "<group>"; };
 		A38A58AA1FFFA72D003F0573 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		A38F4910206952AD00B8164A /* PreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTests.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			files = (
 				A38F98CE20E2A0E5000F27B3 /* libssl.a in Frameworks */,
 				A38F98CF20E2A0E5000F27B3 /* libcrypto.a in Frameworks */,
-				A3797B61207B3684009DEF70 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +255,6 @@
 			children = (
 				A38F98CD20E2A0E5000F27B3 /* libcrypto.a */,
 				A38F98CC20E2A0E5000F27B3 /* libssl.a */,
-				A3797B60207B3684009DEF70 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,13 +368,13 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -711,10 +707,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PDFArchiver/PDFArchiver.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 87KNVHZ8C7;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PDFArchiver/External/OpenSSL/include";
 				INFOPLIST_FILE = "$(SRCROOT)/PDFArchiver/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -736,10 +732,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PDFArchiver/PDFArchiver.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 87KNVHZ8C7;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PDFArchiver/External/OpenSSL/include";
 				INFOPLIST_FILE = "$(SRCROOT)/PDFArchiver/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
