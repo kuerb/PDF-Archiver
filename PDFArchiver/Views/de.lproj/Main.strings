@@ -324,7 +324,7 @@
 "NF4-Dh-JrT.title" = "Käufe wiederherstellen";
 
 /* Class = "NSTextFieldCell"; title = "Removes characters like ä, ö, ü etc. from the document description."; ObjectID = "C3p-Lb-2rS"; */
-"C3p-Lb-2rS.title" = "Entfernt Sonderzeichen (ä, ö, ü etc.) aus der Dokument Beschreibung.";
+"C3p-Lb-2rS.title" = "Entfernt Sonderzeichen (ä, ö, ü etc.) aus der Dokumentenbeschreibung und normalisiert Dateinamen auf Kleinbuchstaben.";
 
 /* Class = "NSTextFieldCell"; title = "Pictures"; ObjectID = "DHw-bL-Azd"; */
 "DHw-bL-Azd.title" = "Bilder";
@@ -358,3 +358,6 @@
 
 /* Class = "NSMenuItem"; title = "App Store Review"; ObjectID = "l3h-jx-Ssa"; */
 "l3h-jx-Ssa.title" = "App Store Review";
+
+/* title = "Convert new tags to lower case"; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
+"2PW-hr-yuS.title" = "Neue Tags in Kleinbuchstaben umwandeln"

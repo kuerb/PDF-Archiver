@@ -18,9 +18,12 @@ class Document: NSObject, Logging {
     }
     var alreadyRenamed = false
     var date = Date()
+    var prefs = Preferences()
     var specification: String? {
         didSet {
-            self.specification = self.specification?.replacingOccurrences(of: "_", with: "-").lowercased()
+            if self.prefs.slugifyNames {
+                self.specification = self.specification?.replacingOccurrences(of: "_", with: "-").lowercased()
+            }
         }
     }
     var documentTags = Set<Tag>()

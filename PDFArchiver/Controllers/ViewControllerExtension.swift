@@ -95,8 +95,10 @@ extension ViewController: NSSearchFieldDelegate, NSTextFieldDelegate {
             guard let textField = notification.object as? NSTextField,
                   let selectedDocument = self.documentAC.selectedObjects.first as? Document else { return }
 
-            selectedDocument.specification = textField.stringValue.lowercased()
-
+            if self.dataModelInstance.prefs.slugifyNames {
+                selectedDocument.specification = textField.stringValue.lowercased()
+            }
+            
         } else if identifier.rawValue == "tagSearchField" {
             guard let searchField = notification.object as? NSSearchField else { return }
             self.tagAC.content = self.dataModelInstance.filterTags(prefix: searchField.stringValue)
