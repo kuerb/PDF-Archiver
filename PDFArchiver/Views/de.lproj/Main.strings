@@ -361,3 +361,15 @@
 
 /* title = "Convert new tags to lower case"; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
 "2PW-hr-yuS.title" = "Neue Tags in Kleinbuchstaben umwandeln"
+
+/* title = "Choose your own delimiter for the {TAGS} naming scheme."; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
+"Hzz-GN-8fF.title" = "Wähle ein eigenes Trennzeichen für das {TAGS}-Namensschema"
+
+/* title = "You may use the following text templates: {YYYY}, {YY}, {MM}, {DD}, {DESCR} or {TAGS}."; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
+"cES-y5-rRN.title" = "Folgende Textbausteine stehen zur Verfügung: {YYYY}, {YY}, {MM}, {DD}, {DESCR} und {TAGS}"
+
+/* title = "Tag Delimiter"; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
+"FZH-ma-TXB.title" = "Tag Trennzeichen"
+
+/* title = "Naming Scheme"; DO I REALLY HAVE TO ADD THIS MANUALLY?*/
+"mtI-Kr-qCP.title" = "Namensschema"
