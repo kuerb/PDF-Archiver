@@ -8,9 +8,9 @@
 */
 "check_document_description" = "Bitte Dokument Beschreibung hinzufügen.";
 
-"check_document_fields" = "Bitte Dokumenten Felder prüfen.";
+"check_document_fields" = "Bitte Dokumenten-Felder prüfen.";
 
-"check_document_tags" = "Bitte Dokument Tags prüfen und mindestens einen Tag auswählen.";
+"check_document_tags" = "Bitte Dokumenten-Tags prüfen und mindestens einen Tag auswählen oder {TAGS} aus dem Namensschema entfernen.";
 
 /* Donation Number label */
 "donation_number_label" = "Personen haben gespendet.";

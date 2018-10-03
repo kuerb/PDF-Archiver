@@ -144,8 +144,11 @@ class Document: NSObject, Logging {
     }
 
     internal func getRenamingPath(slugifyName: Bool) throws -> (foldername: String, filename: String) {
+        // reload Preferences
+        prefs=Preferences()
+        let addTagsToFileName=(self.prefs.namingScheme?.range(of: "{TAGS}") != nil) ? true : false;
         // create a filename and rename the document
-        guard self.documentTags.count > 0 else {
+        guard  !addTagsToFileName || self.documentTags.count > 0 else {
             dialogOK(messageKey: "renaming_failed", infoKey: "check_document_tags", style: .warning)
             throw DocumentError.tags
         }

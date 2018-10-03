@@ -10,7 +10,7 @@
 
 "check_document_fields" = "Doublecheck the document fields.";
 
-"check_document_tags" = "Doublecheck the document tags and select at least one tag.";
+"check_document_tags" = "Doublecheck the document tags and select at least one tag or remove {TAGS} from your naming scheme.";
 
 /* Donation Number label */
 "donation_number_label" = "People donated this Year.";
