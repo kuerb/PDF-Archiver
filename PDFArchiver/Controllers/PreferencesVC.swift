@@ -14,7 +14,7 @@ class PreferencesVC: NSViewController, Logging {
     override func viewWillAppear() {
         super.viewWillAppear()
 
-        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.titlebarAppearsTransparent = false
         self.view.window?.styleMask.remove(.resizable)
     }
 
