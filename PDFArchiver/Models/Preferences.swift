@@ -12,6 +12,8 @@ import os.log
 protocol PreferencesDelegate: class {
     var archivePath: URL? { get set }
     var observedPath: URL? { get set }
+    var namingScheme: String? { get set }
+    var tagDelimiter: String? { get set }
     var archiveModificationDate: Date? { get set }
 
     var slugifyNames: Bool { get set }
@@ -26,12 +28,13 @@ protocol PreferencesDelegate: class {
 }
 
 class Preferences: PreferencesDelegate, Logging {
-
     fileprivate var _archivePath: URL?
     fileprivate var _observedPath: URL?
     private(set) var iCloudDrivePath = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents")
     weak var dataModelTagsDelegate: DataModelTagsDelegate?
     weak var archiveDelegate: ArchiveDelegate?
+    var namingScheme: String?
+    var tagDelimiter: String?
     var archiveModificationDate: Date?
     var slugifyNames: Bool = true
     var lowercaseTags: Bool = true
@@ -124,6 +127,7 @@ class Preferences: PreferencesDelegate, Logging {
             }
         }
     }
+    
 
     init() {
         // load preferences - didSet methods will not be called in init
@@ -143,6 +147,12 @@ class Preferences: PreferencesDelegate, Logging {
         }
         UserDefaults.standard.set(tags, forKey: "tags")
 
+        // save the namingScheme string
+        UserDefaults.standard.set(self.namingScheme, forKey: "namingScheme")
+        
+        // save the tagDelimiter string
+        UserDefaults.standard.set(self.tagDelimiter, forKey: "tagDelimiter")
+        
         // save the slugifyNames flag
         UserDefaults.standard.set(!(self.slugifyNames), forKey: "noSlugify")
         
@@ -179,11 +189,17 @@ class Preferences: PreferencesDelegate, Logging {
         }
         self.dataModelTagsDelegate?.setTagList(tagList: newTagList)
 
+        // load the namingScheme string
+        self.namingScheme = UserDefaults.standard.string(forKey: "namingScheme")
+        
+        // load the tagDelimiter string
+        self.tagDelimiter = UserDefaults.standard.string(forKey: "tagDelimiter")
+        
         // load the noSlugify flag
         self.slugifyNames = !(UserDefaults.standard.bool(forKey: "noSlugify"))
         
         // load the lowercaseTags flag
-        self.convertPictures = UserDefaults.standard.bool(forKey: "lowercaseTags")
+        self.lowercaseTags = UserDefaults.standard.bool(forKey: "lowercaseTags")
 
         // load the analyseOnlyLatestFolders flag
         self.analyseAllFolders = UserDefaults.standard.bool(forKey: "analyseOnlyLatestFolders")

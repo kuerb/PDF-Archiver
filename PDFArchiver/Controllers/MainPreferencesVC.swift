@@ -16,7 +16,12 @@ class MainPreferencesVC: PreferencesVC {
     @IBOutlet weak var archivePathTextField: NSTextField!
     @IBOutlet weak var changeArchivePathButton: NSButton!
     @IBOutlet weak var observedPathTextField: NSTextField!
+    
+    @IBOutlet weak var namingSchemeTextField: NSTextField!
+    @IBOutlet weak var tagDelimiterTextField: NSTextField!
+    
     @IBOutlet weak var documentSlugifyCheckButton: NSButton!
+    @IBOutlet weak var tagsLowercaseButton: NSButton!
     @IBOutlet weak var tagsCheckButton: NSButton!
     @IBOutlet weak var convertPicturesButton: NSButton!
 
@@ -24,6 +29,8 @@ class MainPreferencesVC: PreferencesVC {
         self.preferencesDelegate?.useiCloudDrive = sender.state == .on
         self.updateArchiveFolderSection()
     }
+    
+    
 
     @IBAction func changeArchivePathButtonClicked(_ sender: Any) {
         let openPanel = getOpenPanel("Choose an archive folder")
@@ -45,6 +52,13 @@ class MainPreferencesVC: PreferencesVC {
         }
     }
 
+    /* This action does not really cover change
+    @IBAction func changedNamingScheme(_ sender: NSTextFieldCell) {
+        self.preferencesDelegate?.namingScheme = sender.stringValue
+ 
+    }
+    */
+    
     @IBAction func documentSlugifyCheckButtonClicked(_ sender: NSButton) {
         self.preferencesDelegate?.slugifyNames = sender.state == .on
     }
@@ -68,10 +82,19 @@ class MainPreferencesVC: PreferencesVC {
         if let observedPath = self.preferencesDelegate?.observedPath {
             self.observedPathTextField.stringValue = observedPath.path
         }
+        
+        // update namingScheme
+        self.namingSchemeTextField.stringValue = (self.preferencesDelegate?.namingScheme) ?? "{YYYY}-{MM}-{DD}--{DESCR}__{TAGS}" //use default if no string is stored
+        
+        // update tagDelimiter
+        self.tagDelimiterTextField.stringValue = (self.preferencesDelegate?.tagDelimiter) ?? "_" //use default if no string is stored
 
         // document slugify
         self.documentSlugifyCheckButton.state = (self.preferencesDelegate?.slugifyNames ?? true) ? .on : .off
 
+        // update lowercaseTags
+        self.tagsLowercaseButton.state = (self.preferencesDelegate?.lowercaseTags ?? true) ? .on : .off
+        
         // update tags
         self.tagsCheckButton.state = (self.preferencesDelegate?.analyseAllFolders ?? false) ? .on : .off
 
@@ -82,6 +105,12 @@ class MainPreferencesVC: PreferencesVC {
     }
 
     override func viewWillDisappear() {
+        // save tag delimiter to preference delegate
+        self.preferencesDelegate?.tagDelimiter=self.tagDelimiterTextField.stringValue
+
+        // save naming scheme to preference delegate
+        self.preferencesDelegate?.namingScheme?=self.namingSchemeTextField.stringValue
+        
         // save the current paths + tags
         self.preferencesDelegate?.save()
     }

@@ -157,24 +157,48 @@ class Document: NSObject, Logging {
 
         // get formatted date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateStr = dateFormatter.string(from: self.date)
-
+            // this feels overwhelming
+        dateFormatter.dateFormat = "yyyy"
+        let dateYYYY = dateFormatter.string(from: self.date)
+        dateFormatter.dateFormat = "yy"
+        let dateYY = dateFormatter.string(from: self.date)
+        dateFormatter.dateFormat = "MM"
+        let dateMM = dateFormatter.string(from: self.date)
+        dateFormatter.dateFormat = "dd"
+        let dateDD = dateFormatter.string(from: self.date)
         // get description
         if slugifyName {
             specification = specification.slugify()
         }
 
+        // reload preferences
+        prefs = Preferences()
+        
         // get tags
         var tagStr = ""
         for tag in Array(self.documentTags).sorted(by: { $0.name < $1.name }) {
-            tagStr += "\(tag.name)_"
+            tagStr += "\(tag.name)"
+            if let tagDelim=self.prefs.tagDelimiter {
+                tagStr += tagDelim
+            }
         }
         tagStr = String(tagStr.dropLast(1))
 
         // create new filepath
-        let filename = "\(dateStr) \(specification).pdf"
-        let foldername = String(dateStr.prefix(4))
+        var filename = self.prefs.namingScheme! + ".pdf"
+        os_log("Naming Scheme is: %@", log: self.log, type: .info, filename)
+        
+        // replace template tokens // there has to be a better way
+        filename = filename.replacingOccurrences(of: "{YYYY}", with: dateYYYY)
+        filename = filename.replacingOccurrences(of: "{YY}", with: dateYY)
+        filename = filename.replacingOccurrences(of: "{MM}", with: dateMM)
+        filename = filename.replacingOccurrences(of: "{DD}", with: dateDD)
+        filename = filename.replacingOccurrences(of: "{DESCR}", with: specification)
+        filename = filename.replacingOccurrences(of: "{TAGS}", with: tagStr)
+        // if {TAGS(*)}
+        
+        os_log("Filename preview: %@", log: self.log, type: .info, filename)
+        let foldername = dateYYYY
         return (foldername, filename)
     }
 

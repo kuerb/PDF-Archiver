@@ -668,115 +668,14 @@ Tag your document and save  it:</string>
                         <rect key="frame" x="0.0" y="0.0" width="702" height="501"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box autoresizesSubviews="NO" borderType="line" title="Documents" translatesAutoresizingMaskIntoConstraints="NO" id="hO8-8r-rGn">
-                                <rect key="frame" x="17" y="16" width="668" height="236"/>
-                                <view key="contentView" id="Tju-Lf-HYr">
-                                    <rect key="frame" x="1" y="1" width="666" height="220"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-Jg-klC">
-                                            <rect key="frame" x="70" y="100" width="92" height="19"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="19" id="Oeb-3S-fzW"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Tags" id="Cvq-op-wAk">
-                                                <font key="font" metaFont="systemSemibold" size="15"/>
-                                                <color key="textColor" name="Headline1"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-ZO-Zxh">
-                                            <rect key="frame" x="192" y="79" width="456" height="17"/>
-                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="This may decrease the app speed for large archives." id="Tlv-Ku-QD7">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-15-bWH">
-                                            <rect key="frame" x="192" y="152" width="456" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="452" id="nnk-Le-pIY"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Removes characters like ä, ö, ü etc. from the document description and forces lower case for file names." id="C3p-Lb-2rS">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <button verticalHuggingPriority="751" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-e5-Agn">
-                                            <rect key="frame" x="175" y="188" width="468" height="19"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="464" id="Kw2-jq-Jgl"/>
-                                            </constraints>
-                                            <buttonCell key="cell" type="check" title="Convert description to maximize compatibility" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DRZ-uz-4ap">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="systemSemibold" size="15"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="documentSlugifyCheckButtonClicked:" target="emn-JX-zbO" id="Cy2-JN-KWz"/>
-                                            </connections>
-                                        </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-CS-tF3">
-                                            <rect key="frame" x="75" y="189" width="87" height="19"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Description" id="ZlY-Ux-pR6">
-                                                <font key="font" metaFont="systemSemibold" size="15"/>
-                                                <color key="textColor" name="Headline1"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-hr-yuS">
-                                            <rect key="frame" x="175" y="47" width="468" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Convert new tags to lower case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oXq-N6-TMq">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="systemSemibold" size="15"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="tagsLowercaseButtonClicked:" target="emn-JX-zbO" id="s2R-px-mIV"/>
-                                            </connections>
-                                        </button>
-                                        <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpK-o3-Nnb">
-                                            <rect key="frame" x="175" y="98" width="209" height="24"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="dy9-iR-dmn"/>
-                                            </constraints>
-                                            <buttonCell key="cell" type="check" title="Analyse all archive folders" bezelStyle="regularSquare" imagePosition="leading" inset="2" id="k8C-2q-WjN">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="systemSemibold" size="15"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="tagsCheckButtonClicked:" target="emn-JX-zbO" id="BFe-1y-lqq"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="leading" secondItem="PpK-o3-Nnb" secondAttribute="leading" id="3Ke-zE-Oka"/>
-                                        <constraint firstItem="PpK-o3-Nnb" firstAttribute="top" secondItem="9Rv-e5-Agn" secondAttribute="bottom" constant="70" id="4Nz-oY-zIV"/>
-                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="leading" secondItem="Tju-Lf-HYr" secondAttribute="leading" constant="77" id="67g-cX-bsk"/>
-                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="leading" secondItem="Aga-Jg-klC" secondAttribute="leading" constant="5" id="8Ls-LD-qc1"/>
-                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="top" secondItem="Tju-Lf-HYr" secondAttribute="top" constant="15" id="8f9-uB-kw3"/>
-                                        <constraint firstAttribute="bottom" secondItem="Aga-Jg-klC" secondAttribute="bottom" constant="100" id="DEq-O8-KZL"/>
-                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="trailing" secondItem="46Q-15-bWH" secondAttribute="trailing" constant="-5" id="KpZ-rJ-XjB"/>
-                                        <constraint firstAttribute="trailing" secondItem="9Rv-e5-Agn" secondAttribute="trailing" constant="25" id="LNW-iv-pTu"/>
-                                        <constraint firstItem="Qzn-ZO-Zxh" firstAttribute="top" secondItem="PpK-o3-Nnb" secondAttribute="bottom" constant="4" id="MnX-se-Z9m"/>
-                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="top" secondItem="Tju-Lf-HYr" secondAttribute="top" constant="12" id="O8b-Ae-n0D"/>
-                                        <constraint firstItem="46Q-15-bWH" firstAttribute="top" secondItem="9Rv-e5-Agn" secondAttribute="bottom" constant="4" id="Uhx-mC-qlb"/>
-                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="trailing" secondItem="Aga-Jg-klC" secondAttribute="trailing" id="Xid-6v-66i"/>
-                                        <constraint firstItem="Aga-Jg-klC" firstAttribute="top" secondItem="6gA-CS-tF3" secondAttribute="bottom" constant="70" id="ZP8-mM-lov"/>
-                                        <constraint firstItem="46Q-15-bWH" firstAttribute="leading" secondItem="Qzn-ZO-Zxh" secondAttribute="leading" id="d7W-Y8-4cA"/>
-                                        <constraint firstAttribute="trailing" secondItem="Qzn-ZO-Zxh" secondAttribute="trailing" constant="20" id="dxf-VU-o7Z"/>
-                                    </constraints>
-                                </view>
-                            </box>
                             <box autoresizesSubviews="NO" borderType="line" title="Archive" translatesAutoresizingMaskIntoConstraints="NO" id="qgP-PZ-Vec">
-                                <rect key="frame" x="17" y="263" width="668" height="223"/>
+                                <rect key="frame" x="17" y="301" width="668" height="185"/>
                                 <view key="contentView" id="ehH-tM-sl6">
-                                    <rect key="frame" x="1" y="1" width="666" height="207"/>
+                                    <rect key="frame" x="1" y="1" width="666" height="169"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="joG-X7-QK9">
-                                            <rect key="frame" x="170" y="56" width="473" height="19"/>
+                                            <rect key="frame" x="165" y="54" width="473" height="19"/>
                                             <buttonCell key="cell" type="check" title="Convert pictures to PDFs" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dMg-Kx-7ej">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
@@ -785,19 +684,8 @@ Tag your document and save  it:</string>
                                                 <action selector="convertPicturesButtonClicked:" target="emn-JX-zbO" id="48s-lM-2cB"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="quC-LR-hxW">
-                                            <rect key="frame" x="188" y="19" width="455" height="34"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="451" id="xaG-Wk-ZeV"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Convert pictures (jpg etc.) in the observed folder to PDFs and trash the original." id="WIy-5i-bbd">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-9s-bE4">
-                                            <rect key="frame" x="39" y="93" width="123" height="19"/>
+                                            <rect key="frame" x="38" y="83" width="123" height="19"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Observed Folder" id="z8O-Wh-LiY">
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
                                                 <color key="textColor" name="Headline1"/>
@@ -805,7 +693,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-ce-MNP">
-                                            <rect key="frame" x="39" y="132" width="123" height="19"/>
+                                            <rect key="frame" x="38" y="110" width="123" height="19"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Archive Folder" id="Ju7-wj-fHp">
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
                                                 <color key="textColor" name="Headline1"/>
@@ -813,7 +701,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X5U-R0-ENH">
-                                            <rect key="frame" x="172" y="130" width="374" height="22"/>
+                                            <rect key="frame" x="168" y="108" width="374" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="374" id="1mE-q7-Xho"/>
                                             </constraints>
@@ -825,7 +713,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-jU-gHB">
-                                            <rect key="frame" x="39" y="169" width="123" height="19"/>
+                                            <rect key="frame" x="38" y="137" width="123" height="19"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="iCloud" id="urS-Lh-uQS">
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
                                                 <color key="textColor" name="Headline1"/>
@@ -833,7 +721,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8RK-0V-cYr">
-                                            <rect key="frame" x="545" y="123" width="102" height="33"/>
+                                            <rect key="frame" x="544" y="100" width="102" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="90" id="xrI-vX-Bmb"/>
                                             </constraints>
@@ -846,7 +734,7 @@ Tag your document and save  it:</string>
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-Fa-RBW">
-                                            <rect key="frame" x="172" y="91" width="374" height="22"/>
+                                            <rect key="frame" x="168" y="81" width="374" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Please set the observed path …" drawsBackground="YES" usesSingleLineMode="YES" id="hox-RC-83t">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -855,7 +743,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-3I-7A5">
-                                            <rect key="frame" x="545" y="84" width="102" height="33"/>
+                                            <rect key="frame" x="544" y="73" width="102" height="33"/>
                                             <buttonCell key="cell" type="push" title="Change …" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="obQ-RK-Zgm">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -865,7 +753,7 @@ Tag your document and save  it:</string>
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kzj-Fs-SV2">
-                                            <rect key="frame" x="39" y="56" width="123" height="19"/>
+                                            <rect key="frame" x="38" y="56" width="123" height="19"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pictures" id="DHw-bL-Azd">
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
                                                 <color key="textColor" name="Headline1"/>
@@ -873,7 +761,7 @@ Tag your document and save  it:</string>
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qv-dK-ZbP">
-                                            <rect key="frame" x="170" y="169" width="473" height="19"/>
+                                            <rect key="frame" x="169" y="137" width="473" height="19"/>
                                             <buttonCell key="cell" type="check" title="Save Documents in iCloud Drive" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xlr-HK-YOq">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="systemSemibold" size="15"/>
@@ -882,39 +770,215 @@ Tag your document and save  it:</string>
                                                 <action selector="iCloudDriveButtonClicked:" target="emn-JX-zbO" id="OIi-k5-xFY"/>
                                             </connections>
                                         </button>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="quC-LR-hxW">
+                                            <rect key="frame" x="183" y="20" width="455" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="451" id="xaG-Wk-ZeV"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Convert pictures (jpg etc.) in the observed folder to PDFs and trash the original." id="WIy-5i-bbd">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8RK-0V-cYr" firstAttribute="leading" secondItem="X5U-R0-ENH" secondAttribute="trailing" constant="5" id="3YY-XR-P4S"/>
-                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="trailing" secondItem="8RK-0V-cYr" secondAttribute="trailing" id="6OH-Rj-fAt"/>
-                                        <constraint firstAttribute="trailing" secondItem="8RK-0V-cYr" secondAttribute="trailing" constant="25" id="6Xy-iw-eke"/>
+                                        <constraint firstItem="8RK-0V-cYr" firstAttribute="leading" secondItem="X5U-R0-ENH" secondAttribute="trailing" constant="8" id="3YY-XR-P4S"/>
+                                        <constraint firstItem="X5U-R0-ENH" firstAttribute="top" secondItem="2Qv-dK-ZbP" secondAttribute="bottom" constant="9" id="3ls-L7-jiO"/>
+                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="trailing" secondItem="8RK-0V-cYr" secondAttribute="trailing" id="5nX-pA-Kzt"/>
+                                        <constraint firstAttribute="trailing" secondItem="8RK-0V-cYr" secondAttribute="trailing" constant="26" id="6Xy-iw-eke"/>
                                         <constraint firstItem="X5U-R0-ENH" firstAttribute="leading" secondItem="hB8-Fa-RBW" secondAttribute="leading" id="7xN-F7-lVd"/>
-                                        <constraint firstItem="PTW-ce-MNP" firstAttribute="top" secondItem="oIL-jU-gHB" secondAttribute="bottom" constant="18" id="9DT-By-3yE"/>
+                                        <constraint firstItem="PTW-ce-MNP" firstAttribute="top" secondItem="oIL-jU-gHB" secondAttribute="bottom" constant="8" id="9DT-By-3yE"/>
+                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="leading" secondItem="X5U-R0-ENH" secondAttribute="leading" constant="3" id="BM3-gY-VkA"/>
                                         <constraint firstItem="8RK-0V-cYr" firstAttribute="leading" secondItem="YTa-3I-7A5" secondAttribute="leading" id="C5I-uq-Q3g"/>
-                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="leading" secondItem="X5U-R0-ENH" secondAttribute="leading" id="EyP-j9-qd9"/>
-                                        <constraint firstAttribute="bottom" secondItem="quC-LR-hxW" secondAttribute="bottom" constant="19" id="Ihf-dI-qhB"/>
-                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="top" secondItem="YTa-3I-7A5" secondAttribute="top" id="KQV-ZS-yga"/>
-                                        <constraint firstItem="oIL-jU-gHB" firstAttribute="centerY" secondItem="2Qv-dK-ZbP" secondAttribute="centerY" id="Kqw-vj-7Yc"/>
-                                        <constraint firstItem="quC-LR-hxW" firstAttribute="top" secondItem="joG-X7-QK9" secondAttribute="bottom" constant="5" id="Maa-Rk-LZ7"/>
+                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="centerY" secondItem="oIL-jU-gHB" secondAttribute="centerY" id="GN7-VP-u1r"/>
+                                        <constraint firstAttribute="bottom" secondItem="quC-LR-hxW" secondAttribute="bottom" constant="20" id="Ihf-dI-qhB"/>
+                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="top" secondItem="YTa-3I-7A5" secondAttribute="top" constant="-1" id="KQV-ZS-yga"/>
+                                        <constraint firstItem="quC-LR-hxW" firstAttribute="top" secondItem="joG-X7-QK9" secondAttribute="bottom" constant="2" id="Maa-Rk-LZ7"/>
                                         <constraint firstItem="PTW-ce-MNP" firstAttribute="leading" secondItem="RAD-9s-bE4" secondAttribute="leading" id="O7Q-aI-91M"/>
                                         <constraint firstItem="oIL-jU-gHB" firstAttribute="trailing" secondItem="PTW-ce-MNP" secondAttribute="trailing" id="OX9-Xh-Jug"/>
-                                        <constraint firstItem="Kzj-Fs-SV2" firstAttribute="top" secondItem="RAD-9s-bE4" secondAttribute="bottom" constant="18" id="P6t-fE-YUn"/>
-                                        <constraint firstItem="YTa-3I-7A5" firstAttribute="trailing" secondItem="joG-X7-QK9" secondAttribute="trailing" id="QAl-Zz-ipa"/>
+                                        <constraint firstItem="Kzj-Fs-SV2" firstAttribute="top" secondItem="RAD-9s-bE4" secondAttribute="bottom" constant="8" id="P6t-fE-YUn"/>
+                                        <constraint firstItem="YTa-3I-7A5" firstAttribute="trailing" secondItem="joG-X7-QK9" secondAttribute="trailing" constant="4" id="QAl-Zz-ipa"/>
                                         <constraint firstItem="PTW-ce-MNP" firstAttribute="baseline" secondItem="X5U-R0-ENH" secondAttribute="baseline" id="RbW-eQ-E5f"/>
                                         <constraint firstItem="PTW-ce-MNP" firstAttribute="trailing" secondItem="RAD-9s-bE4" secondAttribute="trailing" id="RoF-Nl-QtD"/>
                                         <constraint firstItem="joG-X7-QK9" firstAttribute="trailing" secondItem="quC-LR-hxW" secondAttribute="trailing" id="Rse-Lu-ScE"/>
-                                        <constraint firstItem="X5U-R0-ENH" firstAttribute="top" secondItem="8RK-0V-cYr" secondAttribute="top" id="TbS-zY-NGL"/>
-                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="top" secondItem="X5U-R0-ENH" secondAttribute="bottom" constant="17" id="VcO-Nm-RgA"/>
-                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="leading" secondItem="oIL-jU-gHB" secondAttribute="trailing" constant="12" id="cxC-YH-Pao"/>
+                                        <constraint firstItem="X5U-R0-ENH" firstAttribute="top" secondItem="8RK-0V-cYr" secondAttribute="top" constant="-1" id="TbS-zY-NGL"/>
+                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="top" secondItem="X5U-R0-ENH" secondAttribute="bottom" constant="5" id="VcO-Nm-RgA"/>
                                         <constraint firstItem="oIL-jU-gHB" firstAttribute="leading" secondItem="PTW-ce-MNP" secondAttribute="leading" id="dB7-jW-VK1"/>
+                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="top" secondItem="ehH-tM-sl6" secondAttribute="top" constant="15" id="eYB-yS-JZC"/>
                                         <constraint firstItem="RAD-9s-bE4" firstAttribute="leading" secondItem="Kzj-Fs-SV2" secondAttribute="leading" id="fPA-7Y-e9U"/>
                                         <constraint firstItem="8RK-0V-cYr" firstAttribute="trailing" secondItem="YTa-3I-7A5" secondAttribute="trailing" id="hGe-vg-p23"/>
-                                        <constraint firstItem="Kzj-Fs-SV2" firstAttribute="centerY" secondItem="joG-X7-QK9" secondAttribute="centerY" id="k4B-Kz-LFt"/>
+                                        <constraint firstItem="Kzj-Fs-SV2" firstAttribute="centerY" secondItem="joG-X7-QK9" secondAttribute="centerY" constant="-2" id="k4B-Kz-LFt"/>
                                         <constraint firstItem="X5U-R0-ENH" firstAttribute="trailing" secondItem="hB8-Fa-RBW" secondAttribute="trailing" id="lEm-bP-AUB"/>
+                                        <constraint firstItem="2Qv-dK-ZbP" firstAttribute="leading" secondItem="oIL-jU-gHB" secondAttribute="trailing" constant="12" id="leD-lC-96Y"/>
                                         <constraint firstItem="RAD-9s-bE4" firstAttribute="trailing" secondItem="Kzj-Fs-SV2" secondAttribute="trailing" id="ppE-Fg-tqo"/>
-                                        <constraint firstItem="YTa-3I-7A5" firstAttribute="baseline" secondItem="hB8-Fa-RBW" secondAttribute="firstBaseline" id="qPx-Tk-V8f"/>
+                                        <constraint firstItem="YTa-3I-7A5" firstAttribute="baseline" secondItem="hB8-Fa-RBW" secondAttribute="firstBaseline" constant="1" id="qPx-Tk-V8f"/>
                                         <constraint firstItem="RAD-9s-bE4" firstAttribute="baseline" secondItem="hB8-Fa-RBW" secondAttribute="baseline" id="rbW-cp-Ei7"/>
-                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="leading" secondItem="joG-X7-QK9" secondAttribute="leading" id="rv7-7f-K0M"/>
-                                        <constraint firstItem="8RK-0V-cYr" firstAttribute="baseline" secondItem="X5U-R0-ENH" secondAttribute="firstBaseline" id="ssJ-WJ-NCe"/>
+                                        <constraint firstItem="hB8-Fa-RBW" firstAttribute="leading" secondItem="joG-X7-QK9" secondAttribute="leading" constant="1" id="rv7-7f-K0M"/>
+                                        <constraint firstItem="8RK-0V-cYr" firstAttribute="baseline" secondItem="X5U-R0-ENH" secondAttribute="firstBaseline" constant="1" id="ssJ-WJ-NCe"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <box autoresizesSubviews="NO" borderType="line" title="Documents" translatesAutoresizingMaskIntoConstraints="NO" id="hO8-8r-rGn">
+                                <rect key="frame" x="17" y="16" width="668" height="281"/>
+                                <view key="contentView" id="Tju-Lf-HYr">
+                                    <rect key="frame" x="1" y="1" width="666" height="265"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-15-bWH">
+                                            <rect key="frame" x="185" y="93" width="452" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="448" id="nnk-Le-pIY"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Removes characters like ä, ö, ü etc. from the document description and forces lower case for file names." id="C3p-Lb-2rS">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="751" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-e5-Agn">
+                                            <rect key="frame" x="168" y="129" width="468" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="464" id="Kw2-jq-Jgl"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="check" title="Convert description to maximize compatibility" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DRZ-uz-4ap">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="documentSlugifyCheckButtonClicked:" target="emn-JX-zbO" id="Cy2-JN-KWz"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-CS-tF3">
+                                            <rect key="frame" x="68" y="130" width="87" height="19"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Description" id="ZlY-Ux-pR6">
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                                <color key="textColor" name="Headline1"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtI-Kr-qCP">
+                                            <rect key="frame" x="41" y="238" width="121" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Naming Scheme" id="YV2-yy-rG4">
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                                <color key="textColor" name="Headline1"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZH-ma-TXB">
+                                            <rect key="frame" x="63" y="171" width="99" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Tag Delimiter" id="wPX-2v-7YJ">
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                                <color key="textColor" name="Headline1"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSI-rt-xiv">
+                                            <rect key="frame" x="168" y="236" width="467" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="{YYYY}-{MM}-{DD}--{DESCR}__{TAGS}" drawsBackground="YES" id="1WK-rr-N37">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="delegate" destination="emn-JX-zbO" id="ad8-oO-cpK"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8m-5H-cwo">
+                                            <rect key="frame" x="168" y="169" width="51" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="_" drawsBackground="YES" id="FSJ-VO-i4o">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <outlet property="delegate" destination="emn-JX-zbO" id="Lwc-Ns-ria"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cES-y5-rRN">
+                                            <rect key="frame" x="166" y="201" width="471" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" title="You may use the following text templates: {YYYY}, {YY}, {MM}, {DD}, {DESCR} or {TAGS}." id="uJQ-1P-kQi">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-GN-8fF">
+                                            <rect key="frame" x="225" y="169" width="412" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" title="Choose your own delimiter for the {TAGS} naming scheme." id="lJu-1P-LOe">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-Jg-klC">
+                                            <rect key="frame" x="63" y="66" width="92" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="Oeb-3S-fzW"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Tags" id="Cvq-op-wAk">
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                                <color key="textColor" name="Headline1"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpK-o3-Nnb">
+                                            <rect key="frame" x="168" y="39" width="209" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="dy9-iR-dmn"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="check" title="Analyse all archive folders" bezelStyle="regularSquare" imagePosition="leading" inset="2" id="k8C-2q-WjN">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="tagsCheckButtonClicked:" target="emn-JX-zbO" id="BFe-1y-lqq"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-ZO-Zxh">
+                                            <rect key="frame" x="185" y="20" width="456" height="17"/>
+                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="This may decrease the app speed for large archives." id="Tlv-Ku-QD7">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-hr-yuS">
+                                            <rect key="frame" x="168" y="68" width="468" height="19"/>
+                                            <buttonCell key="cell" type="check" title="Convert new tags to lower case" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oXq-N6-TMq">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="tagsLowercaseButtonClicked:" target="emn-JX-zbO" id="s2R-px-mIV"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="leading" secondItem="PpK-o3-Nnb" secondAttribute="leading" id="3Ke-zE-Oka"/>
+                                        <constraint firstItem="PpK-o3-Nnb" firstAttribute="top" secondItem="9Rv-e5-Agn" secondAttribute="bottom" constant="70" id="4Nz-oY-zIV"/>
+                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="leading" secondItem="Tju-Lf-HYr" secondAttribute="leading" constant="70" id="67g-cX-bsk"/>
+                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="leading" secondItem="Aga-Jg-klC" secondAttribute="leading" constant="5" id="8Ls-LD-qc1"/>
+                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="top" secondItem="Tju-Lf-HYr" secondAttribute="top" constant="119" id="8f9-uB-kw3"/>
+                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="trailing" secondItem="2PW-hr-yuS" secondAttribute="trailing" id="9rk-xw-MME"/>
+                                        <constraint firstItem="2PW-hr-yuS" firstAttribute="top" secondItem="Qzn-ZO-Zxh" secondAttribute="bottom" constant="-65" id="Bek-vi-aUs"/>
+                                        <constraint firstItem="9Rv-e5-Agn" firstAttribute="trailing" secondItem="46Q-15-bWH" secondAttribute="trailing" constant="-1" id="KpZ-rJ-XjB"/>
+                                        <constraint firstAttribute="trailing" secondItem="9Rv-e5-Agn" secondAttribute="trailing" constant="32" id="LNW-iv-pTu"/>
+                                        <constraint firstItem="Qzn-ZO-Zxh" firstAttribute="top" secondItem="PpK-o3-Nnb" secondAttribute="bottom" constant="4" id="MnX-se-Z9m"/>
+                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="top" secondItem="Tju-Lf-HYr" secondAttribute="top" constant="116" id="O8b-Ae-n0D"/>
+                                        <constraint firstAttribute="bottom" secondItem="Aga-Jg-klC" secondAttribute="bottom" constant="66" id="QaD-KH-7ba"/>
+                                        <constraint firstItem="PpK-o3-Nnb" firstAttribute="leading" secondItem="2PW-hr-yuS" secondAttribute="leading" id="RfQ-5N-xTz"/>
+                                        <constraint firstItem="46Q-15-bWH" firstAttribute="top" secondItem="9Rv-e5-Agn" secondAttribute="bottom" constant="4" id="Uhx-mC-qlb"/>
+                                        <constraint firstItem="6gA-CS-tF3" firstAttribute="trailing" secondItem="Aga-Jg-klC" secondAttribute="trailing" id="Xid-6v-66i"/>
+                                        <constraint firstItem="Aga-Jg-klC" firstAttribute="top" secondItem="6gA-CS-tF3" secondAttribute="bottom" constant="45" id="ZP8-mM-lov"/>
+                                        <constraint firstItem="46Q-15-bWH" firstAttribute="leading" secondItem="Qzn-ZO-Zxh" secondAttribute="leading" id="d7W-Y8-4cA"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qzn-ZO-Zxh" secondAttribute="trailing" constant="27" id="dxf-VU-o7Z"/>
                                     </constraints>
                                 </view>
                             </box>
@@ -922,11 +986,11 @@ Tag your document and save  it:</string>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hO8-8r-rGn" secondAttribute="bottom" constant="20" symbolic="YES" id="3op-me-Ssh"/>
                             <constraint firstItem="qgP-PZ-Vec" firstAttribute="leading" secondItem="hO8-8r-rGn" secondAttribute="leading" id="4uq-ZY-P6a"/>
-                            <constraint firstItem="hO8-8r-rGn" firstAttribute="top" secondItem="qgP-PZ-Vec" secondAttribute="bottom" constant="15" id="9XM-lI-tXi"/>
+                            <constraint firstItem="hO8-8r-rGn" firstAttribute="top" secondItem="qgP-PZ-Vec" secondAttribute="bottom" constant="8" id="9XM-lI-tXi"/>
                             <constraint firstItem="qgP-PZ-Vec" firstAttribute="trailing" secondItem="hO8-8r-rGn" secondAttribute="trailing" id="ChP-dM-HMc"/>
                             <constraint firstItem="qgP-PZ-Vec" firstAttribute="leading" secondItem="7f8-kJ-SDe" secondAttribute="leading" constant="20" symbolic="YES" id="EgK-YI-Cpw"/>
                             <constraint firstAttribute="trailing" secondItem="qgP-PZ-Vec" secondAttribute="trailing" constant="20" symbolic="YES" id="KW1-iF-hyP"/>
-                            <constraint firstItem="hO8-8r-rGn" firstAttribute="top" secondItem="7f8-kJ-SDe" secondAttribute="top" constant="249" id="LVf-tr-YiO"/>
+                            <constraint firstItem="hO8-8r-rGn" firstAttribute="top" secondItem="7f8-kJ-SDe" secondAttribute="top" constant="204" id="LVf-tr-YiO"/>
                             <constraint firstItem="qgP-PZ-Vec" firstAttribute="top" secondItem="7f8-kJ-SDe" secondAttribute="top" constant="15" id="hZE-q1-2P3"/>
                         </constraints>
                     </view>
@@ -935,8 +999,11 @@ Tag your document and save  it:</string>
                         <outlet property="changeArchivePathButton" destination="8RK-0V-cYr" id="mvt-dW-q7Y"/>
                         <outlet property="convertPicturesButton" destination="joG-X7-QK9" id="nnk-Af-BXE"/>
                         <outlet property="documentSlugifyCheckButton" destination="9Rv-e5-Agn" id="vtT-7X-YSr"/>
-                        <outlet property="observedPathTextField" destination="hB8-Fa-RBW" id="1Cy-Lg-BQS"/>
+                        <outlet property="namingSchemeTextField" destination="RSI-rt-xiv" id="M6k-z9-r49"/>
+                        <outlet property="observedPathTextField" destination="hB8-Fa-RBW" id="hQY-gt-Cqn"/>
+                        <outlet property="tagDelimiterTextField" destination="g8m-5H-cwo" id="fUV-If-qCL"/>
                         <outlet property="tagsCheckButton" destination="PpK-o3-Nnb" id="e7Q-EZ-HHd"/>
+                        <outlet property="tagsLowercaseButton" destination="2PW-hr-yuS" id="jfb-Gr-2Uw"/>
                         <outlet property="useiCloudDrive" destination="2Qv-dK-ZbP" id="y2B-Hf-GgA"/>
                     </connections>
                 </viewController>
@@ -1494,7 +1561,7 @@ Help &gt; Show Onboarding</string>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView id="9wq-Yh-6cT">
-                                                                                    <rect key="frame" x="32" y="1" width="204" height="17"/>
+                                                                                    <rect key="frame" x="32" y="1" width="203" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eV-E8-I4x">
