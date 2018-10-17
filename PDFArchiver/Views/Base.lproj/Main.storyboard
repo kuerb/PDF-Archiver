@@ -1207,11 +1207,11 @@ Help &gt; Show Onboarding</string>
                                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="snn-Ub-ylk">
                                                 <rect key="frame" x="0.0" y="28" width="320" height="510"/>
                                                 <clipView key="contentView" id="IQ8-Cx-TuB">
-                                                    <rect key="frame" x="1" y="0.0" width="318" height="509"/>
+                                                    <rect key="frame" x="1" y="0.0" width="318" height="494"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <tableView identifier="DocumentTableView" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" headerView="8zw-71-lOb" viewBased="YES" id="6Bq-b9-66z" userLabel="Document Table View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="368" height="486"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="368" height="471"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1305,7 +1305,7 @@ Help &gt; Show Onboarding</string>
                                                     </subviews>
                                                 </clipView>
                                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ujd-lb-X02">
-                                                    <rect key="frame" x="1" y="493" width="318" height="16"/>
+                                                    <rect key="frame" x="1" y="494" width="318" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Faa-2w-ot5">
@@ -1574,7 +1574,7 @@ Help &gt; Show Onboarding</string>
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView id="9wq-Yh-6cT">
-                                                                                    <rect key="frame" x="32" y="1" width="203" height="17"/>
+                                                                                    <rect key="frame" x="31.5" y="1" width="203" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eV-E8-I4x">
@@ -1758,6 +1758,9 @@ Help &gt; Show Onboarding</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="advancedSettingsClicked:" target="6tg-Z3-Jhx" id="dkX-7u-cRT"/>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EGt-FF-VqB">
                                 <rect key="frame" x="299" y="154" width="378" height="304"/>
@@ -1778,6 +1781,9 @@ Main Folder
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="advancedSettingsButton" destination="TI8-Kx-E0J" id="oXU-G7-QP7"/>
+                    </connections>
                 </viewController>
                 <customObject id="2C5-0D-cAH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

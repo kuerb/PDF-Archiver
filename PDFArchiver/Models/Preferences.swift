@@ -22,7 +22,8 @@ protocol PreferencesDelegate: class {
     var iCloudDrivePath: URL? {get}
     var analyseAllFolders: Bool { get set }
     var convertPictures: Bool { get set }
-
+    var advancedSettings: Bool { get set }
+    
     func accessSecurityScope(closure: () -> Void)
     func save()
 }
@@ -38,6 +39,7 @@ class Preferences: PreferencesDelegate, Logging {
     var archiveModificationDate: Date?
     var slugifyNames: Bool = true
     var lowercaseTags: Bool = true
+    var advancedSettings: Bool = false
     var useiCloudDrive: Bool = false {
         didSet {
 
@@ -172,6 +174,9 @@ class Preferences: PreferencesDelegate, Logging {
 
         // save the useiCloudDrive flag
         UserDefaults.standard.set(self.useiCloudDrive, forKey: "useiCloudDrive")
+        
+        // save the AdvancedSettings flag
+        UserDefaults.standard.set(self.advancedSettings, forKey: "advancedSettings")
     }
 
     func load() {
@@ -214,6 +219,10 @@ class Preferences: PreferencesDelegate, Logging {
 
         // load the useiCloudDrive flag
         self.useiCloudDrive = UserDefaults.standard.bool(forKey: "useiCloudDrive")
+        
+        
+        // load the AdvancedSettings flag
+        self.advancedSettings = UserDefaults.standard.bool(forKey: "advancedSettings")
     }
 
     func accessSecurityScope(closure: () -> Void) {
