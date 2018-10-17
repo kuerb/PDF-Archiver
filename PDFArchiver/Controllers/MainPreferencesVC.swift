@@ -16,6 +16,7 @@ class MainPreferencesVC: PreferencesVC {
     @IBOutlet weak var archivePathTextField: NSTextField!
     @IBOutlet weak var changeArchivePathButton: NSButton!
     @IBOutlet weak var observedPathTextField: NSTextField!
+    @IBOutlet weak var observedArchivePath: NSPathControl! //test
     
     @IBOutlet weak var namingSchemeTextField: NSTextField!
     @IBOutlet weak var tagDelimiterTextField: NSTextField!
@@ -118,6 +119,7 @@ class MainPreferencesVC: PreferencesVC {
     private func updateArchiveFolderSection() {
         if let archivePath = self.preferencesDelegate?.archivePath {
             self.archivePathTextField.stringValue = archivePath.path
+            self.observedArchivePath.url = archivePath
         }
 
         if self.preferencesDelegate?.iCloudDrivePath != nil {

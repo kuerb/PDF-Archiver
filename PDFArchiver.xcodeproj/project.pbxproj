@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		348D671F21663B0500E48932 /* AdvancedPrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D671E21663B0400E48932 /* AdvancedPrefsVC.swift */; };
 		A3050B162101CBFC00F5E90A /* DateParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3050B152101CBFC00F5E90A /* DateParserTests.swift */; };
 		A307BB372014B8530046C391 /* MainPreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307BB362014B8530046C391 /* MainPreferencesVC.swift */; };
 		A307BB3B2014D5300046C391 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307BB3A2014D5300046C391 /* Preferences.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		348D671E21663B0400E48932 /* AdvancedPrefsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsVC.swift; sourceTree = "<group>"; };
 		A3050B152101CBFC00F5E90A /* DateParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParserTests.swift; sourceTree = "<group>"; };
 		A307BB362014B8530046C391 /* MainPreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPreferencesVC.swift; sourceTree = "<group>"; };
 		A307BB3A2014D5300046C391 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				A36B47BF2077DA4D00F3DCAF /* DonationPreferencesVC.swift */,
 				A32A128220468A3000CFC81F /* OnboardingViewController.swift */,
 				A38A58AA1FFFA72D003F0573 /* WindowController.swift */,
+				348D671E21663B0400E48932 /* AdvancedPrefsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				A315408D20C83DF0004947CC /* StringExtensions.swift in Sources */,
 				A31B53171FF6A6D8007A3D14 /* FileHandling.swift in Sources */,
 				A36B47C02077DA4D00F3DCAF /* DonationPreferencesVC.swift in Sources */,
+				348D671F21663B0500E48932 /* AdvancedPrefsVC.swift in Sources */,
 				A31B52EA1FF694B0007A3D14 /* AppDelegate.swift in Sources */,
 				A3FF275820D0E614007EED90 /* DateParser.swift in Sources */,
 				A3C3D06D207744E400E80B1A /* PreferencesVC.swift in Sources */,
