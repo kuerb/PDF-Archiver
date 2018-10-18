@@ -201,7 +201,24 @@ class Document: NSObject, Logging {
         // if {TAGS(*)}
         
         os_log("Filename preview: %@", log: self.log, type: .info, filename)
-        let foldername = dateYYYY
+        
+        
+        var foldername = dateYYYY
+        
+        //switch up folder name if tags contain Rechnung //use Mail-like rules in the future
+        if prefs.advancedSettings && Array(self.documentTags).contains(where: {$0.name.lowercased()=="rechnung"}){ //Check tags
+            
+            foldername = "Rechnungen" //input additional folder
+            
+            if Array(self.documentTags).contains(where: {$0.name.lowercased()=="steuer"}){
+                foldername += "/Steuerjahr "+dateYYYY
+            }else{
+                foldername += "/Andere"
+            }
+            
+        }
+        //END FORCED SWITCH OF RECHNUNGEN
+        
         return (foldername, filename)
     }
 
