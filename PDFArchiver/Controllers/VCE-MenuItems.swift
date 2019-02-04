@@ -96,4 +96,19 @@ extension ViewController {
         // close application
         NSApplication.shared.terminate(self)
     }
+    
+    @IBAction func rotateImageLeft(_ sender: NSMenuItem) {
+        if let pgNum = self.pdfContentView.document?.index(for: self.pdfContentView.currentPage!){
+            self.pdfContentView.document?.page(at: pgNum)?.rotation -= 90
+        }
+        
+    }
+    
+    @IBAction func rotateImageRight(_ sender: NSMenuItem) {
+        //This won't save. Need to transform?
+        if let pgNum = self.pdfContentView.document?.index(for: self.pdfContentView.currentPage!){
+            self.pdfContentView.document?.page(at: pgNum)?.rotation += 90
+        }
+    }
+
 }

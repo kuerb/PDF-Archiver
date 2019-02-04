@@ -162,6 +162,25 @@ CA
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Tools" id="z1C-e6-D0c">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Tools" id="djf-Rd-4vt">
+                                    <items>
+                                        <menuItem title="Show Inspector" enabled="NO" keyEquivalent="i" id="ZYn-fb-Px6"/>
+                                        <menuItem isSeparatorItem="YES" id="1t4-Kg-BXI"/>
+                                        <menuItem title="Rotate Left" keyEquivalent="l" id="wnN-D0-FlU">
+                                            <connections>
+                                                <action selector="rotateImageLeft:" target="Ady-hI-5gd" id="xZJ-s1-jV9"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Rotate Right" keyEquivalent="r" id="hwH-K7-RCa">
+                                            <connections>
+                                                <action selector="rotateImageRight:" target="Ady-hI-5gd" id="vId-lN-43a"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
@@ -898,7 +917,6 @@ Tag your document and save  it:</string>
                                         <constraint firstAttribute="trailing" secondItem="Qzn-ZO-Zxh" secondAttribute="trailing" constant="27" id="dxf-VU-o7Z"/>
                                     </constraints>
                                 </view>
-                                <font key="titleFont" metaFont="message" size="11"/>
                             </box>
                             <box autoresizesSubviews="NO" borderType="line" title="Archive" translatesAutoresizingMaskIntoConstraints="NO" id="qgP-PZ-Vec">
                                 <rect key="frame" x="17" y="301" width="668" height="185"/>
@@ -1061,7 +1079,6 @@ Tag your document and save  it:</string>
                                         <constraint firstItem="8RK-0V-cYr" firstAttribute="baseline" secondItem="X5U-R0-ENH" secondAttribute="firstBaseline" constant="1" id="ssJ-WJ-NCe"/>
                                     </constraints>
                                 </view>
-                                <font key="titleFont" metaFont="message" size="11"/>
                             </box>
                         </subviews>
                         <constraints>
