@@ -51,7 +51,7 @@ extension ViewController {
         if idx < self.dataModelInstance.untaggedDocuments.count {
             self.documentAC.setSelectionIndex(idx)
         } else {
-            self.documentAC.setSelectionIndex(self.dataModelInstance.untaggedDocuments.count - 1)
+            self.documentAC.setSelectionIndex(self.dataModelInstance.untaggedDocuments.count-1)
         }
     }
 

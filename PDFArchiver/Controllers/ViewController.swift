@@ -31,11 +31,15 @@ class ViewController: NSViewController, Logging {
     @IBOutlet var documentTagAC: NSArrayController!
 
     @IBOutlet weak var datePicker: NSDatePicker!
+    @IBOutlet weak var calendarPicker: NSDatePickerCell!
     @IBOutlet weak var specificationField: NSTextField!
     @IBOutlet weak var tagSearchField: NSSearchField!
 
     // outlets
     @IBAction func datePickDone(_ sender: NSDatePicker) {
+        //change calendar
+        calendarPicker.dateValue=sender.dateValue
+        
         // test if a document is selected
         guard !self.documentAC.selectedObjects.isEmpty,
             let selectedDocument = self.documentAC.selectedObjects.first as? Document else {
@@ -46,6 +50,21 @@ class ViewController: NSViewController, Logging {
         selectedDocument.date = sender.dateValue
     }
 
+    @IBAction func calendarPickDone(_ sender: NSDatePicker) {
+        //change calendar
+        datePicker.dateValue=sender.dateValue
+        
+        // test if a document is selected
+        guard !self.documentAC.selectedObjects.isEmpty,
+            let selectedDocument = self.documentAC.selectedObjects.first as? Document else {
+                return
+        }
+        
+        // set the date of the pdf document
+        selectedDocument.date = sender.dateValue
+        
+    }
+    
     @IBAction func descriptionDone(_ sender: NSTextField) {
         // test if a document is selected
         guard !self.documentAC.selectedObjects.isEmpty,
@@ -113,6 +132,7 @@ class ViewController: NSViewController, Logging {
                 break
             }
             self.documentAC.setSelectionIndex(newIndex)
+            self.documentAC.setSelectionIndex(1) //always set 1 //change to always set first not header
         }
     }
 
@@ -125,7 +145,9 @@ class ViewController: NSViewController, Logging {
         self.dataModelInstance.viewControllerDelegate = self
 
         // add sorting
-        self.documentAC.sortDescriptors = [NSSortDescriptor(key: "documentDone", ascending: false),
+        self.documentAC.sortDescriptors = [NSSortDescriptor(key: "group", ascending: false),
+                                           NSSortDescriptor(key: "isHeader", ascending: false),
+                                           NSSortDescriptor(key: "documentDone", ascending: true),
                                            NSSortDescriptor(key: "name", ascending: true)]
         self.tagTableView.sortDescriptors = [NSSortDescriptor(key: "count", ascending: false),
                                              NSSortDescriptor(key: "name", ascending: true)]
@@ -147,6 +169,9 @@ class ViewController: NSViewController, Logging {
         // set the array controller
         self.tagAC.content = self.dataModelInstance.tags
         self.documentAC.content = self.dataModelInstance.untaggedDocuments
+        
+        //update selection away from header
+        self.documentAC.setSelectionIndex(1)
     }
 
     override func viewDidAppear() {
@@ -186,5 +211,105 @@ class ViewController: NSViewController, Logging {
         // quit application if the window disappears
         NSApplication.shared.terminate(self)
     }
+    
+    // In your NSTableViewDelegate //DID I ADD THIS? if then: probably from https://stackoverflow.com/a/40476926 //translucent selection
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        return CustomTableRowView()
+    }
+    
+    //move into rowViewforRow --^ later?!
+    /*
+    func tableView(_ tableView: NSTableView, rowHeightForRow row: Int) -> CGFloat {
+            return 25.0
+    }
+    */
+    //https://stackoverflow.com/a/42880412 && http://www.knowstack.com/swift-3-1-nstableview-complete-guide/
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        var documents = (self.documentAC.arrangedObjects as? [Document]) ?? []
+        
+        
+        let myCell:NSTableCellView = tableView.makeView(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
+        //faux SourceView
+            if documents[row].isHeader == true {
+                
 
+                myCell.textField?.textColor = NSColor.secondaryLabelColor
+                myCell.textField?.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize, weight: NSFont.Weight.medium)
+                
+                myCell.imageView?.image = nil
+                myCell.imageView?.isHidden=true
+                for constraint in myCell.constraints {
+                    if constraint.identifier == "imageToTextConstraint" {
+                        constraint.constant = -27
+                    }
+                }
+            
+                
+                
+            } else {
+                
+                //https://gist.github.com/ericdke/756b42df93ef81db1681
+                if let bundle = Bundle(path: "/System/Library/CoreServices/CoreTypes.bundle"),
+                    let path = bundle.path(forResource: "SidebarGenericFile", ofType: "icns"),
+                    let iconImage = NSImage(contentsOfFile: path) {
+                    
+                    
+                    let background = iconImage
+                    let overlay = NSImage(named: "img")
+
+                    myCell.imageView?.image = iconImage
+                    myCell.imageView?.alphaValue = 0.5
+                    
+                    if documents[row].group == -1 {
+                        myCell.textField?.textColor = .tertiaryLabelColor
+                        //myCell.textField?.font = NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .ultraLight)
+                    }else{
+                        myCell.textField?.textColor = .labelColor
+                        myCell.textField?.font = NSFont.systemFont(ofSize: NSFont.systemFontSize)
+                    }
+                    
+                    
+                    //myCell.imageView?.image = nil
+                    myCell.imageView?.isHidden=false
+                    for constraint in myCell.constraints {
+                        if constraint.identifier == "imageToTextConstraint" {
+                            constraint.constant = 7
+                        }
+                    }
+                    
+                }
+                
+                
+                
+            }
+
+        return myCell
+    }
+    
+    //Make header non-selectable
+    //https://stackoverflow.com/a/50028331
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        var documents = (self.documentAC.arrangedObjects as? [Document]) ?? []
+        
+        if documents[row].isHeader == true {
+            return false
+        }else{
+            return true
+        }
+    }
+
+}
+
+class KSHeaderCellView: NSTableCellView {
+    
+    @IBOutlet weak var headerInfoTextField:NSTextField!
+    
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        let bPath:NSBezierPath = NSBezierPath(rect: dirtyRect)
+        let fillColor = NSColor(red: 0.7, green: 0.7, blue: 0.5, alpha: 1.0)
+        fillColor.set()
+        bPath.fill()
+    }
+    
 }

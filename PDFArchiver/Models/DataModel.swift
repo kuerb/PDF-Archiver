@@ -57,6 +57,12 @@ class DataModel: Logging {
             self.prefs.accessSecurityScope {
                 result = document.rename(archivePath: archivePath, slugify: self.prefs.slugifyNames)
             }
+            
+            
+            //Add Done header
+            if !self.untaggedDocuments.contains(where: {$0.group == -1 && $0.isHeader}){
+                self.untaggedDocuments.append(Document(headerName:"Done", group:-1))
+            }
 
             if result {
                 // update the documents
@@ -169,11 +175,16 @@ extension DataModel: DataModelTagsDelegate {
         // access the file system and add documents to the data model
         self.prefs.accessSecurityScope {
             var documents = [Document]()
-            for path in paths {
+
+            for (index,path) in paths.enumerated() {
+                //add header
+                documents.append(Document(headerName: path.lastPathComponent, group: index))
+                
                 let files = self.archive.getPDFs(path)
                 for file in files {
                     documents.append(Document(path: file, availableTags: &self.tags))
                 }
+
             }
             self.untaggedDocuments = documents
         }

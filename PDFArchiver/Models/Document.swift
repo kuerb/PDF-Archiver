@@ -8,6 +8,7 @@
 
 import Foundation
 import os.log
+import Cocoa
 
 class Document: NSObject, Logging {
     // structure for PDF documents on disk
@@ -16,6 +17,9 @@ class Document: NSObject, Logging {
     @objc var documentDone: String {
         return self.alreadyRenamed ? "✔️" : ""
     }
+    var headerName: String = ""
+    @objc var isHeader = false
+    @objc var group = 0
     var alreadyRenamed = false
     var date = Date()
     var prefs = Preferences()
@@ -26,8 +30,12 @@ class Document: NSObject, Logging {
             }
         }
     }
+//    NSImage *machineIcon = [NSImage imageNamed:NSImageNameComputer]
+//    [[NSWorkspace sharedWorkspace] iconForFileType: NSFileTypeForHFSTypeCode(kToolbarApplicationsFolderIcon)]
+//    let image = NSWorkspace.shared.icon(forFile: "/tmp/Test.swift")
+//    let image  = NSWorkspace.shared.icon(forFileType:NSFileTypeForHFSTypeCode(OSType(kToolbarApplicationsFolderIcon)))
+    
     var documentTags = Set<Tag>()
-
     init(path: URL, availableTags: inout Set<Tag>) {
         self.path = path
 
@@ -89,7 +97,12 @@ class Document: NSObject, Logging {
         }
         
     }
-
+    init(headerName: String, group: NSInteger){
+        path = NSURL(string:"")! as URL
+        name=headerName
+        isHeader=true
+        self.group=group
+    }
     @discardableResult
     func rename(archivePath: URL, slugify: Bool) -> Bool {
         let foldername: String
@@ -128,6 +141,7 @@ class Document: NSObject, Logging {
         self.name = String(newFilepath.lastPathComponent)
         self.path = newFilepath
         self.alreadyRenamed = true
+        self.group = -1 //set -1 as "done"
 
         do {
             var tags = [String]()

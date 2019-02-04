@@ -56,6 +56,7 @@ extension ViewController: ViewControllerDelegate {
         if self.dataModelInstance.untaggedDocuments.count == 0 {
             self.pdfContentView.document = nil
             self.datePicker.dateValue = Date()
+            self.calendarPicker.dateValue = Date()
             self.specificationField.stringValue = ""
             self.documentTagAC.content = nil
             return
@@ -63,6 +64,7 @@ extension ViewController: ViewControllerDelegate {
         if let selectedDocument = self.documentAC.selectedObjects.first as? Document {
             // set the document date, description and tags
             self.datePicker.dateValue = selectedDocument.date
+            self.calendarPicker.dateValue = selectedDocument.date
             self.specificationField.stringValue = selectedDocument.specification ?? ""
             self.documentTagAC.content = selectedDocument.documentTags
 

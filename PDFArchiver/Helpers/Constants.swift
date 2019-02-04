@@ -27,6 +27,6 @@ struct Constants {
 
     struct  Layout {
         static let wantsLayer = true
-        static let cornerRadius = CGFloat(3)
+        static let cornerRadius = CGFloat(0)
     }
 }

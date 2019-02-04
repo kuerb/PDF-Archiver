@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34328526220724BC0098F8DA /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 34328522220724BA0098F8DA /* img.png */; };
+		34328527220724BC0098F8DA /* img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34328523220724BB0098F8DA /* img@2x.png */; };
+		34328528220724BC0098F8DA /* pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 34328524220724BB0098F8DA /* pdf.png */; };
+		34328529220724BC0098F8DA /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34328525220724BC0098F8DA /* pdf@2x.png */; };
+		346C75692178D2E200A68857 /* CustomTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346C75682178D2E200A68857 /* CustomTableRowView.swift */; };
 		348D671F21663B0500E48932 /* AdvancedPrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D671E21663B0400E48932 /* AdvancedPrefsVC.swift */; };
 		A3050B162101CBFC00F5E90A /* DateParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3050B152101CBFC00F5E90A /* DateParserTests.swift */; };
 		A307BB372014B8530046C391 /* MainPreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307BB362014B8530046C391 /* MainPreferencesVC.swift */; };
@@ -68,6 +73,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34328522220724BA0098F8DA /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
+		34328523220724BB0098F8DA /* img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img@2x.png"; sourceTree = "<group>"; };
+		34328524220724BB0098F8DA /* pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf.png; sourceTree = "<group>"; };
+		34328525220724BC0098F8DA /* pdf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@2x.png"; sourceTree = "<group>"; };
+		346C75682178D2E200A68857 /* CustomTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableRowView.swift; sourceTree = "<group>"; };
 		348D671E21663B0400E48932 /* AdvancedPrefsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPrefsVC.swift; sourceTree = "<group>"; };
 		A3050B152101CBFC00F5E90A /* DateParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParserTests.swift; sourceTree = "<group>"; };
 		A307BB362014B8530046C391 /* MainPreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPreferencesVC.swift; sourceTree = "<group>"; };
@@ -195,6 +205,10 @@
 		A31B52DD1FF694B0007A3D14 = {
 			isa = PBXGroup;
 			children = (
+				34328522220724BA0098F8DA /* img.png */,
+				34328523220724BB0098F8DA /* img@2x.png */,
+				34328524220724BB0098F8DA /* pdf.png */,
+				34328525220724BC0098F8DA /* pdf@2x.png */,
 				A347FAD92041ACBE001A7925 /* Localizable.strings */,
 				A31B52E81FF694B0007A3D14 /* PDFArchiver */,
 				A31B52FB1FF694B0007A3D14 /* PDFArchiverTests */,
@@ -292,6 +306,7 @@
 				A3F5BC902019BAA70043B192 /* Document.swift */,
 				A307BB3A2014D5300046C391 /* Preferences.swift */,
 				A3299E1B2015BE3D0036125F /* Tag.swift */,
+				346C75682178D2E200A68857 /* CustomTableRowView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,9 +436,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34328529220724BC0098F8DA /* pdf@2x.png in Resources */,
 				A347FAD72041ACBE001A7925 /* Localizable.strings in Resources */,
+				34328527220724BC0098F8DA /* img@2x.png in Resources */,
 				A31B52EE1FF694B0007A3D14 /* Assets.xcassets in Resources */,
 				A359E4B7202C376E00A703AF /* InfoPlist.strings in Resources */,
+				34328528220724BC0098F8DA /* pdf.png in Resources */,
+				34328526220724BC0098F8DA /* img.png in Resources */,
 				A34A06E120E4120F0097481D /* AppleIncRootCertificate.cer in Resources */,
 				A31B52F11FF694B0007A3D14 /* Main.storyboard in Resources */,
 			);
@@ -507,6 +526,7 @@
 				A359963F202A3CC700CDD6E8 /* MyWindow.swift in Sources */,
 				A32A128320468A3000CFC81F /* OnboardingViewController.swift in Sources */,
 				A34CC6B120F0E81900DB5CBE /* Archive.swift in Sources */,
+				346C75692178D2E200A68857 /* CustomTableRowView.swift in Sources */,
 				A35601F820E415C7006AC5C8 /* SwiftyLocalReceiptValidator.swift in Sources */,
 				A3A4C1C12015177A008BB354 /* NetworkHandling.swift in Sources */,
 				A3FC0DA4201B05F10082CD2A /* DataModel.swift in Sources */,

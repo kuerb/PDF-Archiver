@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/juka/Documents/GIT/pdf-archiver/PDFArchiver.xcodeproj">
+      location = "group:img.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../Desktop/img.png">
+   </FileRef>
+   <FileRef
+      location = "group:img@2x.png">
+   </FileRef>
+   <FileRef
+      location = "group:pdf.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../Desktop/pdf.png">
+   </FileRef>
+   <FileRef
+      location = "group:pdf@2x.png">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -97,6 +97,7 @@ class Archive: ArchiveDelegate, Logging {
 
             // update the taggedDocuments
             self.documents = [Document]()
+            
             for file in files {
                 self.documents.append(Document(path: file, availableTags: &tags))
             }
